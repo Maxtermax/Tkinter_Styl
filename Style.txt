@@ -1,0 +1,14 @@
+ButtonID:
+	background red
+	color olive 
+	padding 4px 	
+	
+	IDAnidado:
+		background green
+		color peru 
+	ansc:
+		background #424 
+ButtonID2:
+	background red 
+	color #234
+
