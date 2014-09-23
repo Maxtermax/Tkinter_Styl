@@ -1,0 +1,15 @@
+{
+"titulo":{
+	"bg":"peru",
+	"fg":"white",
+	"text":"Esneyder"
+},
+"pos_titulo":{"side":"left"},
+"boton":{
+	"bg":"olive",
+	"fg":"white",
+	"text":"Click"
+}
+	
+
+}

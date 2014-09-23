@@ -1,25 +1,25 @@
-from pymongo import MongoClient
+import json
 from Tkinter import *
-import subprocess as comandos
-from gridfs import GridFS
-import sys 
-import re 
 
-fs = open("Style.txt","r")#read , write 
-Test=fs.readlines()
-fs.close()
-ctx=Tk()
 
-json={
-	"bg":"red",
-	"fg":"white",
-	"text":"Esneyder es la leche"
-}
 
-Esneyder=Label(ctx,json)
+Canvas=Tk()
+def Saluda():
+	Esneyder["text"]="___________TEXTO CAMBIADO XD_____________" 
+	print "Soy", Esneyder["text"]
 
-Esneyder.pack()
-Esneyder.mainloop()
+with open('Style.json') as Archivo_Styl:    
+    data= json.load(Archivo_Styl)
+
+Esneyder=Label(Canvas,data["titulo"])
+Esneyder.pack(data["pos_titulo"])
+
+boton=Button(Canvas,data["boton"],command=Saluda)
+boton.pack()
+
+
+Canvas.mainloop()
+
 
 
 
