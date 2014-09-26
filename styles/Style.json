@@ -1,6 +1,7 @@
 {
 "Title":{
 	"font":"helvetica 30",
+	"bg":"#fff",
 	"text":"Iniciar sesión"
 },
 "Title_pos":{
@@ -9,8 +10,9 @@
 },
 "Uname":{
 	"fg":"#000",
+	"bg":"#fff",
 	"text":"Nombre de usuario",
-	"font":"helvetica 14"
+	"font":"helvetica 14"	
 },
 "Uname_pos":{
 	"x":50,
@@ -18,8 +20,9 @@
 },
 "Ename":{
 	"text":"*Nombre de usuario",
+	"bd":"1",
 	"font":"helvetica 14",
-	"relief":"flat",
+	"relief":"solid",
 	"width":23
 },
 "Ename_pos":{
@@ -28,6 +31,7 @@
 },
 "PassU":{
 	"text":"Contraseña",
+	"bg":"#fff",
 	"font":"helvetica 14"
 },
 "PassU_pos":{
@@ -35,9 +39,10 @@
 	"y":170
 },
 "EPass":{
+	"bd":"1",
 	"show":"*",
 	"font":"helvetica 14",
-	"relief":"flat",
+	"relief":"solid",
 	"width":23
 },
 "EPass_pos":{
