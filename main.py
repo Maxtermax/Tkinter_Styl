@@ -47,9 +47,6 @@ w.photo = photo
 w.place(x=350,y=40)
 '''
 
-
-
-
 root.title("Iniciar sesion")
 
 
