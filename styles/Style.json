@@ -1,14 +1,64 @@
 {
-"titulo":{
-	"bg":"peru",
-	"fg":"white",
-	"text":"Esneyder"
+"Title":{
+	"font":"helvetica 30",
+	"text":"Iniciar sesión"
 },
-"pos_titulo":{"side":"left"},
-"boton":{
-	"bg":"olive",
-	"fg":"white",
-	"text":"Click"
+"Title_pos":{
+	"x":30,
+	"y":34
+},
+"Uname":{
+	"fg":"#000",
+	"text":"Nombre de usuario",
+	"font":"helvetica 14"
+},
+"Uname_pos":{
+	"x":50,
+	"y":95 
+},
+"Ename":{
+	"text":"*Nombre de usuario",
+	"font":"helvetica 14",
+	"relief":"flat",
+	"width":23
+},
+"Ename_pos":{
+	"x":50,
+	"y":130 
+},
+"PassU":{
+	"text":"Contraseña",
+	"font":"helvetica 14"
+},
+"PassU_pos":{
+	"x":45,
+	"y":170
+},
+"EPass":{
+	"show":"*",
+	"font":"helvetica 14",
+	"relief":"flat",
+	"width":23
+},
+"EPass_pos":{
+	"x":53,
+	"y":200	
+},
+
+
+"entrar":{
+	"fg":"#fff",
+	"bg":"#007cb6",
+	"font":"helvetica 13",
+	"relief":"flat",
+	"text":"Entrar",
+	"width":27,
+	"activebackground":"#016899",
+	"activeforeground":"#fff"
+},	
+"entrar_pos":{
+	"x":50,
+	"y":250
 }
 	
 

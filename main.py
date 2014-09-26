@@ -1,53 +1,56 @@
+# -*- coding: iso-8859-1 -*-
+
 import json
 from Tkinter import *
+import ttk 
+import tkFont
 
-
-
-ctx=Tk()
 
 with open('./styles/Style.json') as Archivo_Styl:    
     data= json.load(Archivo_Styl)
 
+root = Tk()
+root.geometry("654x350+250+150")
 
-Config_Ventana=Frame(ctx)#Configuracion del ventana 
-Config_Ventana.grid(column=0,row=0,padx=(70,70),pady=(100,100))
-Config_Ventana.columnconfigure(0,weight=1)
-Config_Ventana.rowconfigure(0,weight=1)
+root.maxsize(width=654,height=350)
+root.minsize(width=654,height=350)
+
+Title = Label(root,data["Title"])
+Title.place(data["Title_pos"])
+
+Uname = Label(root,data["Uname"])
+Uname.place(data["Uname_pos"])
+
+Ename = Entry(root,data["Ename"])
+Ename.place(data["Ename_pos"])
 
 
-'''
-def ObtenerValor():
-	print Name.get()
+PassU = Label(root,data["PassU"])
+PassU.place(data["PassU_pos"])
 
-Esneyder=Button(Config_Ventana,data["boton"],command=ObtenerValor)
-Esneyder.grid(column=2,row=30)
+EPass = Entry(root,data["EPass"])
+EPass.place(data["EPass_pos"])
 
 
-v=""
-Name=Entry(Config_Ventana,width=40,textvariable=v)
-Name.grid(column=3,row=1)
-'''
+Entrar = Button(root,data["entrar"])
+Entrar.place(data["entrar_pos"])
 
-menu=Menu(ctx)
-
-ctx.config(menu=menu)
-
-Sub=Menu(menu)
-menu.add_cascade(label="Archivo",menu=Sub)
-Sub.add_command(label="abrir")
-Sub.add_command(label="configuracion")
-Sub.add_command(label="cerrar")
-
-menu2=Menu(ctx)
-menu2.add_cascade(label="Archivo",menu=menu2)
-menu2.add_command(label="abrir")
-menu2.add_command(label="configuracion")
-menu2.add_command(label="cerrar")
+photo = PhotoImage(file="Bat.gif")
+w = Label(root, image=photo,width=280,height=245)
+w.photo = photo
+w.place(x=350,y=40)
 
 
 
 
-ctx.mainloop()
+
+
+
+
+root.title("Iniciar sesion")
+root.mainloop()
+
+
 
 
 
