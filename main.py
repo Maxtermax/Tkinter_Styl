@@ -2,9 +2,14 @@
 
 import json
 from Tkinter import *
+from pymongo import *
+import re
 import ttk 
 import tkFont
 
+conx = Connection()
+db = conx.data
+coll = db.Colecion
 
 with open('./styles/Style.json') as Archivo_Styl:    
     data= json.load(Archivo_Styl)
@@ -18,18 +23,26 @@ root.minsize(width=654,height=350)
 Title = Label(root,data["Title"])
 Title.place(data["Title_pos"])
 
-expU = '[a-z]+-?[a-z]+'
-expP = '/(^(?=.*[a-z])(?=.*[A-Z])(?=.*\d){6,20}.+$)/'
+#d = {"name": "pepito-perez",
+#"pass":"perez"}
+#coll.insert(d)
 
-def vli():
-	Uname = entry.get()
-	initU = str(db.Colecion.find_one({"name":Uname}))
-	initP = str(db.Colecion.find_one({"pass":Uname}))
-	if re.findall(expU,Uname) == [init:]:
-		if re.findall(expP,EPass) == [initP]:
+expU = '[a-z]+-?[a-z]+'
+expP = '[a-z]+-?[a-z]+' #'/(^(?=.*[a-z])(?=.*[A-Z])(?=.*\d){6,20}.+$)/'
+
+def validar():
+	name = Ename.get()
+	passw = EPass.get()
+	initU = str(db.Colecion.find_one({"name":name})["name"])
+	initP = str(db.Colecion.find_one({"pass":passw})["pass"])
+	if re.findall(expU,name) == [initU]:
+		if re.findall(expP,passw) == [initP]:
 			print "Bienvenido"
+		else:
+			print "Pass Err"
+			print initP
 	else:
-		print "Error"
+		print "Name Err"
 
 Uname = Label(root,data["Uname"])
 Uname.place(data["Uname_pos"])
