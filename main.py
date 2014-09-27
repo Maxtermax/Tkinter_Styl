@@ -6,6 +6,7 @@ import ttk
 import tkFont
 
 
+
 with open('./styles/Style.json') as Archivo_Styl:    
     data= json.load(Archivo_Styl)
 
@@ -14,7 +15,6 @@ root.geometry("654x350+250+150")
 
 root.maxsize(width=654,height=350)
 root.minsize(width=654,height=350)
-
 
 
 class Form:
@@ -36,7 +36,6 @@ class Form:
 		#Retorna el mismo elemento que se crea en la instancia por medio del callback de la funcion que lo maneja
 		#Para que se pueda definir una funcion que va a manejar todo lo que tenga que ver con ese elemento			 
 
-
 	def Label(self,style,pos):
 		self.Label_name = Label(root,style)
 		self.Label_name.place(pos)
@@ -45,6 +44,11 @@ class Form:
 	def Run(self,style):
 		self.root.config(style)
 		self.root.mainloop()
+
+
+
+
+
 
 
 
@@ -58,36 +62,24 @@ form.Label(data["PassU"],data["PassU_pos"])
 
 
 def Submit_Handler(btn):
-	def Over_Submit(event):
-		print 'Sobre Enviar'
+	def Over_Button(event):
 		btn.config({"bg":"red"})
 
-	def Out_Submit(event):
-		print 'Fuera de Enviar'
-		btn.config({"bg":"#016899"})
+	#end Over_Button
 
-	btn.bind("<Enter>",Over_Submit) 
-	btn.bind("<Leave>",Out_Submit)	
-	btn.bind("<FocusIn>",Over_Submit)
-	btn.bind("<FocusOut>",Out_Submit)	
-
-
+	def Out_Button(event):
+		btn.config({"bg":"#007cb6"})
+	#end Out_Button
+	btn.bind("<Enter>",Over_Button)	
+	btn.bind("<Leave>",Out_Button)	
+	btn.bind("<FocusIn>",Over_Button)	
+	btn.bind("<FocusOut>",Out_Button)	
 
 
 
 def Pass_Handler(input):
-	def Over_Pass(event):
-		print 'Event data ',event.x #Posicion en x de donde paso el evento
+	print "Otra funcion que maneja la contraseña"
 
-		input.config({"bg":"red"})
-
-	def Out_Pass(event):
-		input.config({"bg":"#fff"})
-
-	input.bind("<Enter>",Over_Pass)
-	input.bind("<Leave>",Out_Pass)
-	input.bind("<FocusIn>",Over_Pass)
-	input.bind("<FocusOut>",Out_Pass)	
 
 
 def Name_Handler(input):
@@ -98,88 +90,7 @@ def Name_Handler(input):
 form.Input(data["EPass"],data["EPass_pos"],Pass_Handler)
 form.Input(data["Ename"],data["Ename_pos"],Name_Handler)
 form.Button(data["entrar"],data["entrar_pos"],Submit_Handler)
-form.Run({"bg":"white"})
+form.Run({"bg":"white"})#config windows 
+
 
 #http://effbot.org/tkinterbook/tkinter-events-and-bindings.htm 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
