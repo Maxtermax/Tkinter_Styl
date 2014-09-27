@@ -18,6 +18,18 @@ root.minsize(width=654,height=350)
 Title = Label(root,data["Title"])
 Title.place(data["Title_pos"])
 
+expU = '[a-z]+-?[a-z]+'
+expP = '/(^(?=.*[a-z])(?=.*[A-Z])(?=.*\d){6,20}.+$)/'
+
+def vli():
+	Uname = entry.get()
+	initU = str(db.Colecion.find_one({"name":Uname}))
+	initP = str(db.Colecion.find_one({"pass":Uname}))
+	if re.findall(expU,Uname) == [init:]:
+		if re.findall(expP,EPass) == [initP]:
+			print "Bienvenido"
+	else:
+		print "Error"
 
 Uname = Label(root,data["Uname"])
 Uname.place(data["Uname_pos"])
@@ -35,7 +47,7 @@ EPass = Entry(root,data["EPass"])
 EPass.place(data["EPass_pos"])
 
 
-Entrar = Button(root,data["entrar"])
+Entrar = Button(root,data["entrar"], command= validar)
 Entrar.place(data["entrar_pos"])
 Entrar.config(cursor="spraycan")
 
