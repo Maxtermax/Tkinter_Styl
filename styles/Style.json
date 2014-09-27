@@ -1,70 +1,72 @@
 {
-"Title":{
-	"font":"helvetica 30",
-	"bg":"#fff",
-	"text":"Iniciar sesión"
-},
-"Title_pos":{
-	"x":30,
-	"y":34
-},
-"Uname":{
-	"fg":"#000",
-	"bg":"#fff",
-	"text":"Nombre de usuario",
-	"font":"helvetica 14"	
-},
-"Uname_pos":{
-	"x":50,
-	"y":95 
-},
-"Ename":{
-	"text":"*Nombre de usuario",
-	"bd":"1",
-	"font":"helvetica 14",
-	"relief":"solid",
-	"width":23
-},
-"Ename_pos":{
-	"x":50,
-	"y":130 
-},
-"PassU":{
-	"text":"Contraseña",
-	"bg":"#fff",
-	"font":"helvetica 14"
-},
-"PassU_pos":{
-	"x":45,
-	"y":170
-},
-"EPass":{
-	"bd":"1",
-	"show":"*",
-	"font":"helvetica 14",
-	"relief":"solid",
-	"width":23
-},
-"EPass_pos":{
-	"x":53,
-	"y":200	
-},
+	"Title":{
+		"font":"helvetica 30",
+		"bg":"#fff",
+		"text":"Iniciar sesión"
+	},
+	"Title_pos":{
+		"x":30,
+		"y":34
+	},
+	"Uname":{
+		"fg":"#000",
+		"bg":"#fff",
+		"text":"Nombre de usuario",
+		"font":"helvetica 14"	
+	},
+	"Uname_pos":{
+		"x":50,
+		"y":95 
+	},
+	"Ename":{
+		"text":"*Nombre de usuario",
+		"highlightcolor":"olive",
+		"bd":"1",
+		"font":"helvetica 14",
+		"relief":"solid",
+		"width":23
+	},
+	"Ename_pos":{
+		"x":50,
+		"y":130 
+	},
+	"EPass":{
+		"bd":"1",
+		"show":"*",
+		"font":"helvetica 14",
+		"relief":"solid",
+		"width":23
+	},
+	"EPass_pos":{
+		"x":53,
+		"y":200	
+	},
+	"PassU":{
+		"text":"Contraseña",
+		"bg":"#fff",
+		"font":"helvetica 14"
+	},
+	"PassU_pos":{
+		"x":45,
+		"y":170
+	},
 
 
-"entrar":{
-	"fg":"#fff",
-	"bg":"#007cb6",
-	"font":"helvetica 13",
-	"relief":"flat",
-	"text":"Entrar",
-	"width":27,
-	"activebackground":"#016899",
-	"activeforeground":"#fff"
-},	
-"entrar_pos":{
-	"x":50,
-	"y":250
-}
-	
+	"entrar":{
+		"fg":"#fff",
+		"bg":"#007cb6",
+		"font":"helvetica 13",
+		"relief":"flat",
+		"text":"Entrar",
+		"width":27,
+		"cursor":"hand2",
+		"activebackground":"#016899",
+		"activeforeground":"#fff"
+	},	
+	"entrar_pos":{
+		"x":50,
+		"y":250
+	}
+
 
 }
