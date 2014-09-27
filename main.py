@@ -77,6 +77,8 @@ def Submit_Handler(btn):
 
 def Pass_Handler(input):
 	def Over_Pass(event):
+		print 'Event data ',event.x #Posicion en x de donde paso el evento
+
 		input.config({"bg":"red"})
 
 	def Out_Pass(event):
@@ -98,6 +100,7 @@ form.Input(data["Ename"],data["Ename_pos"],Name_Handler)
 form.Button(data["entrar"],data["entrar_pos"],Submit_Handler)
 form.Run({"bg":"white"})
 
+#http://effbot.org/tkinterbook/tkinter-events-and-bindings.htm 
 
 
 
