@@ -2,7 +2,6 @@ from Tkinter import *
 root = Tk()
 
 class Form():
-	s = 1
 	def __init__(self,root):
 		self.root = root #Guarda la instancia principal de TK() dentro de self.root para que pueda se usada en otras funciones
 

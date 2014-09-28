@@ -1,9 +1,11 @@
 # -*- coding: iso-8859-1 -*-
 
 import json
+import sys
 from Tkinter import *
 import ttk 
 import tkFont
+sys.path.append("Form")
 from Class_Form import *
 
 with open('./styles/Style.json') as Archivo_Styl:    
@@ -68,6 +70,5 @@ form.Button(data["entrar"],data["entrar_pos"],Submit_Handler)
 
 
 form.Run({"bg":"white"})#config windows 
-
 
 #http://effbot.org/tkinterbook/tkinter-events-and-bindings.htm 
