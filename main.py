@@ -1,12 +1,12 @@
 # -*- coding: iso-8859-1 -*-
-
 import json
 import sys
 from Tkinter import *
-import ttk 
-import tkFont
 sys.path.append("Form")
 from Class_Form import *
+root = Tk()
+
+
 
 with open('./styles/Style.json') as Archivo_Styl:    
     data= json.load(Archivo_Styl)
@@ -45,8 +45,7 @@ def Submit_Handler(btn):
 	
 	def validate():
 		print name.get() , "Nombre \n"
-		name.config(bg="red")
-		passW.config(bg="green")
+
 		print passW.get() , "Contraseña"
 	
 	#end validate 
@@ -61,11 +60,11 @@ def Submit_Handler(btn):
 
 
 
-passW=form.Input(data["EPass"],data["EPass_pos"],Pass_Handler)
-
 name=form.Input(data["Ename"],data["Ename_pos"],Name_Handler)
-
+passW=form.Input(data["EPass"],data["EPass_pos"],Pass_Handler)
 form.Button(data["entrar"],data["entrar_pos"],Submit_Handler)
+
+
 
 
 
