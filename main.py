@@ -24,10 +24,13 @@ class Form:
 	def Input(self,style,pos,cb):
 		self.Input_name=Entry(self.root,style)
 		self.Input_name.place(pos)
+
+
 		return cb(self.Input_name) #cb=callback
 
 		#Retorna el mismo elemento que se crea en la instancia por medio del callback de la funcion que lo maneja
 		#Para que se pueda definir una funcion que va a manejar todo lo que tenga que ver con ese elemento			 
+
 
 	def Button(self,style,pos,cb):
 		self.Button_name = Button(self.root,style)
@@ -39,7 +42,6 @@ class Form:
 	def Label(self,style,pos):
 		self.Label_name = Label(root,style)
 		self.Label_name.place(pos)
-
 
 	def Run(self,style):
 		self.root.config(style)
@@ -54,6 +56,10 @@ class Form:
 
 form = Form(root) #Instancia de la clase formulario 
 
+
+
+
+
 form.Label(data["Title"],data["Title_pos"])
 form.Label(data["Uname"],data["Uname_pos"])
 form.Label(data["PassU"],data["PassU_pos"])
@@ -61,35 +67,58 @@ form.Label(data["PassU"],data["PassU_pos"])
 
 
 
-def Submit_Handler(btn):
-	def Over_Button(event):
-		btn.config({"bg":"red"})
+def Pass_Handler(input=""):
+  #Do every you gonna do
+  return input#end return the input 
 
+
+
+def Name_Handler(input):
+  #Do every you gonna do
+  return input#end return the input 
+
+
+def Submit_Handler(btn):
+	#validate here if you wanna 
+	def Over_Button(event):
+		btn.config({"bg":"#016899"})
 	#end Over_Button
 
 	def Out_Button(event):
 		btn.config({"bg":"#007cb6"})
 	#end Out_Button
+	
+	def validate():
+		print name.get() , "Nombre \n"
+		name.config(bg="red")
+		passW.config(bg="green")
+		print passW.get() , "Contraseña"
+	
+	#end validate 
+
+	#events 
 	btn.bind("<Enter>",Over_Button)	
 	btn.bind("<Leave>",Out_Button)	
 	btn.bind("<FocusIn>",Over_Button)	
 	btn.bind("<FocusOut>",Out_Button)	
+	btn.config(command=validate)	
+	#end events 
 
 
 
-def Pass_Handler(input):
-	print "Otra funcion que maneja la contraseña"
 
 
 
-def Name_Handler(input):
-	print "Otra funcion que maneja el nombre"
 
+passW=form.Input(data["EPass"],data["EPass_pos"],Pass_Handler)
 
+name=form.Input(data["Ename"],data["Ename_pos"],Name_Handler)
 
-form.Input(data["EPass"],data["EPass_pos"],Pass_Handler)
-form.Input(data["Ename"],data["Ename_pos"],Name_Handler)
 form.Button(data["entrar"],data["entrar_pos"],Submit_Handler)
+
+
+
+
 form.Run({"bg":"white"})#config windows 
 
 

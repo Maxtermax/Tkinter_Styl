@@ -32,6 +32,7 @@
 	},
 	"EPass":{
 		"bd":"1",
+		"textvariable":"",
 		"show":"*",
 		"font":"helvetica 14",
 		"relief":"solid",
@@ -42,6 +43,7 @@
 		"y":200	
 	},
 	"PassU":{
+		"highlightbackground":"#fff",
 		"text":"Contraseña",
 		"bg":"#fff",
 		"font":"helvetica 14"
