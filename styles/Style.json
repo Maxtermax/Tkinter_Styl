@@ -10,16 +10,15 @@
 	},
 	"Uname":{
 		"fg":"#000",
-		"bg":"#fff",
+		"font":"helvetica 14",	
 		"text":"Nombre de usuario",
-		"font":"helvetica 14"	
+		"bg":"#fff"
 	},
 	"Uname_pos":{
 		"x":50,
 		"y":95 
 	},
 	"Ename":{
-		"text":"*Nombre de usuario",
 		"highlightcolor":"olive",
 		"bd":"1",
 		"font":"helvetica 14",
@@ -57,11 +56,12 @@
 	"entrar":{
 		"fg":"#fff",
 		"bg":"#007cb6",
-		"bd":0,
 		"font":"helvetica 13",
 		"relief":"flat",
 		"text":"Entrar",
-		"width":28,
+		"width":255,
+		"height":30,
+		"compound":"center",
 		"cursor":"hand2",
 		"activebackground":"#016899",
 		"activeforeground":"#fff"

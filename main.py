@@ -1,54 +1,60 @@
 # -*- coding: iso-8859-1 -*-
-import json
-import sys
+import json,sys,re
 from Tkinter import *
 sys.path.append("Form")
 from Class_Form import *
+from PIL import ImageTk
+import Image
+
 root = Tk()
-
-
-
-with open('./styles/Style.json') as Archivo_Styl:    
-    data= json.load(Archivo_Styl)
-
 root.geometry("654x350+250+150")
 root.maxsize(width=654,height=350)
 root.minsize(width=654,height=350)
 
+with open('./styles/Style.json') as Archivo_Styl:    
+    data= json.load(Archivo_Styl)
 
 form = Form(root) #Instancia de la clase formulario 
-
 form.Label( data["Title"],data["Title_pos"])
 form.Label(data["Uname"],data["Uname_pos"])
 form.Label(data["PassU"],data["PassU_pos"])
 
 
 def Pass_Handler(input=""):
-  #Do every you gonna do
-  return input#end return the input 
+	#Events
+#	input.bind("<Key>",val_max)	
+	#End Events 
+	return input
+	#end return the input 
+#_________End Pass_Handler 
 
-
-def Name_Handler(input):
-  #Do every you gonna do
-  return input#end return the input 
-
+def Name_Handler(input=""):
+	return input
+	#end return the input 
+#_________End Name_Handler 
 
 def Submit_Handler(btn):
-	#validate here if you wanna 
+
+	img=ImageTk.PhotoImage(file="flecha.png")
+	btn.config(image=img)
+
+
 	def Over_Button(event):
-		btn.config({"bg":"#016899"})
-	#end Over_Button
+		btn.config(bg="#016899",image=img)
+
+	#_________end Over_Button
 
 	def Out_Button(event):
-		btn.config({"bg":"#007cb6"})
-	#end Out_Button
+		btn.config(bg="#007cb6",image=img)
+
+	#______end Out_Button
 	
 	def validate():
-		print name.get() , "Nombre \n"
-
-		print passW.get() , "Contraseña"
-	
-	#end validate 
+		if re.match("^[a-zA-Z0-9ñÑ]{10,15}$",passW.get()) and re.match("^[a-zA-Z0-9ñÑ]{8,}$",name.get()):
+			print 'Bien pass'
+		#contraseña que acepta minimo 10 y maximo 15 caracteres, numeros del 0 al 9 y letras a,z mayusculas t minusculas
+		#nombre de usuario que acepta almenos 8caracteres, numeros del 0 al 9 y letras a,z mayusculas t minusculas
+	#___end validate 
 
 	#events 
 	btn.bind("<Enter>",Over_Button)	
@@ -57,9 +63,10 @@ def Submit_Handler(btn):
 	btn.bind("<FocusOut>",Out_Button)	
 	btn.config(command=validate)	
 	#end events 
+#_________End Submit_Handler 
 
 
-
+#form widgets 
 name=form.Input(data["Ename"],data["Ename_pos"],Name_Handler)
 passW=form.Input(data["EPass"],data["EPass_pos"],Pass_Handler)
 form.Button(data["entrar"],data["entrar_pos"],Submit_Handler)
@@ -68,6 +75,9 @@ form.Button(data["entrar"],data["entrar_pos"],Submit_Handler)
 
 
 
-form.Run({"bg":"white"})#config windows 
+form.Run({"bg":"#fff"})#config windows 
+
+
+
 
 #http://effbot.org/tkinterbook/tkinter-events-and-bindings.htm 
