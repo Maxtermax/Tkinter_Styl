@@ -26,36 +26,27 @@ def Pass_Handler(input=""):
 	#End Events 
 	return input
 	#end return the input 
-#_________End Pass_Handler 
+
 
 def Name_Handler(input=""):
 	return input
 	#end return the input 
-#_________End Name_Handler 
 
 def Submit_Handler(btn):
-
 	img=ImageTk.PhotoImage(file="flecha.png")
 	btn.config(image=img)
-
 
 	def Over_Button(event):
 		btn.config(bg="#016899",image=img)
 
-	#_________end Over_Button
-
 	def Out_Button(event):
 		btn.config(bg="#007cb6",image=img)
 
-	#______end Out_Button
-	
 	def validate():
 		if re.match("^[a-zA-Z0-9ñÑ]{10,15}$",passW.get()) and re.match("^[a-zA-Z0-9ñÑ]{8,}$",name.get()):
 			print 'Bien pass'
 		#contraseña que acepta minimo 10 y maximo 15 caracteres, numeros del 0 al 9 y letras a,z mayusculas t minusculas
 		#nombre de usuario que acepta almenos 8caracteres, numeros del 0 al 9 y letras a,z mayusculas t minusculas
-	#___end validate 
-
 	#events 
 	btn.bind("<Enter>",Over_Button)	
 	btn.bind("<Leave>",Out_Button)	
@@ -63,21 +54,12 @@ def Submit_Handler(btn):
 	btn.bind("<FocusOut>",Out_Button)	
 	btn.config(command=validate)	
 	#end events 
-#_________End Submit_Handler 
-
 
 #form widgets 
 name=form.Input(data["Ename"],data["Ename_pos"],Name_Handler)
 passW=form.Input(data["EPass"],data["EPass_pos"],Pass_Handler)
 form.Button(data["entrar"],data["entrar_pos"],Submit_Handler)
 
-
-
-
-
 form.Run({"bg":"#fff"})#config windows 
-
-
-
 
 #http://effbot.org/tkinterbook/tkinter-events-and-bindings.htm 
